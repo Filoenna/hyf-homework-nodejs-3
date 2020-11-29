@@ -11,12 +11,12 @@ app.get("/users", function(request, response){
     response.json(users);
 })
 
-app.post('/users', function(request, response){
-    users.push({ id: users.length});
-    response.json(users);
+app.post('/user', function(request, response){
+    users.push({id: users.length});
+    response.json(users[users.length-1]);
 })
 
-app.get('/users/:id', function(request, response){
+app.get('/user/:id', function(request, response){
     const id = request.params.id;
     response.json(users[id]);
 })
